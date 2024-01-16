@@ -1,0 +1,14 @@
+/* Add your CSS styles for the side panel and content */
+.side-panel {
+  width: 200px;
+  float: left;
+}
+
+.content {
+  margin-left: 220px; /* Adjust based on the side panel width */
+}
+
+body {
+  margin: 0px;
+  background-color: black;
+}

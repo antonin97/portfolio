@@ -71,8 +71,8 @@ const GameOfLife = () => {
 
 
       const [gridSize, setGridSize] = useState({
-        cols: Math.floor(window.innerWidth / 15) - 1,
-        rows: Math.floor(window.innerHeight / 15) - 1,
+        cols: Math.floor(window.innerWidth / 15) - 2,
+        rows: Math.floor(window.innerHeight / 15) - 2,
       });
     
       const [grid, setGrid] = useState(() => generateInitGrid(gridSize.cols, gridSize.rows));
@@ -83,8 +83,8 @@ const GameOfLife = () => {
         const handleResize = () => {
           speedRef.current = 2000;
           const newGridSize = {
-            cols: Math.floor(window.innerWidth / 15) - 1,
-            rows: Math.floor(window.innerHeight / 15) - 1,
+            cols: Math.floor(window.innerWidth / 15) - 2,
+            rows: Math.floor(window.innerHeight / 15) -2,
           };
           setGridSize(newGridSize);
           setGrid(generateInitGrid(newGridSize.cols, newGridSize.rows));

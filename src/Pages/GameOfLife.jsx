@@ -18,7 +18,6 @@ const GameOfLife = () => {
     let coordinates = [];
     let padding_left = 0;
     let padding_up = 0;
-    console.log(rows, columns)
 
     if (rows > 34 && columns > 99) {
         coordinates = ANTONIN_MARTYKAN32x97
@@ -36,15 +35,10 @@ const GameOfLife = () => {
     }
 
     for (let dot of coordinates) {
-        console.log(dot[0], dot[1], padding_left, padding_up)
         grid[dot[0] + padding_up][dot[1] + padding_left] = true;
     }
     return grid;
     };
-
-
-
-
 
     const generateNextGrid = (currentGrid) => {
         const newGrid = currentGrid.map((row, i) =>
@@ -81,7 +75,9 @@ const GameOfLife = () => {
     
       useEffect(() => {
         const handleResize = () => {
+          clearTimeout(timeoutRef.current);
           speedRef.current = 2000;
+          timeoutRef.current = setTimeout(runGame, speedRef.current);
           const newGridSize = {
             cols: Math.floor(window.innerWidth / 15) - 2,
             rows: Math.floor(window.innerHeight / 15) -2,
@@ -91,9 +87,7 @@ const GameOfLife = () => {
         };
     
         const runGame = () => {
-          console.log('next generation');
           clearTimeout(timeoutRef.current); // Clear previous timeout
-    
           setGrid((prevGrid) => generateNextGrid(prevGrid));
     
           // Decrease speed by 100ms after each iteration
@@ -106,8 +100,7 @@ const GameOfLife = () => {
     
         // Add a timeout before starting the animation loop
         const initialTimeout = setTimeout(() => {
-          console.log('initial timeout');
-          runGame();
+        runGame();
         }, 3000); // Set the desired initial timeout duration
     
         window.addEventListener('resize', handleResize);

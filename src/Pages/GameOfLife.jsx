@@ -66,7 +66,7 @@ const GameOfLife = () => {
 
       const [gridSize, setGridSize] = useState({
         cols: Math.floor(window.innerWidth / 15) - 2,
-        rows: Math.floor(window.innerHeight / 15) - 2,
+        rows: Math.floor(window.innerHeight / 15) - 7,
       });
     
       const [grid, setGrid] = useState(() => generateInitGrid(gridSize.cols, gridSize.rows));
@@ -80,7 +80,7 @@ const GameOfLife = () => {
           timeoutRef.current = setTimeout(runGame, speedRef.current);
           const newGridSize = {
             cols: Math.floor(window.innerWidth / 15) - 2,
-            rows: Math.floor(window.innerHeight / 15) -2,
+            rows: Math.floor(window.innerHeight / 15) - 7,
           };
           setGridSize(newGridSize);
           setGrid(generateInitGrid(newGridSize.cols, newGridSize.rows));
@@ -113,26 +113,50 @@ const GameOfLife = () => {
       }, []);
     
       return (
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: `repeat(${gridSize.cols}, 15px)`,
-            gridTemplateRows: `repeat(${gridSize.rows}, 15px)`,
-            gap: '0',
-          }}
-        >
-          {grid.map((rows, i) =>
-            rows.map((cell, j) => (
-              <div
-                key={`${i}-${j}`}
-                style={{
-                  width: '20px',
-                  height: '20px',
-                  backgroundColor: cell ? 'white' : 'black',
-                }}
-              ></div>
-            ))
-          )}
+        <div>
+            <div
+            style={{
+                display: 'grid',
+                gridTemplateColumns: `repeat(${gridSize.cols}, 15px)`,
+                gridTemplateRows: `repeat(${gridSize.rows}, 15px)`,
+                gap: '0',
+            }}
+            >
+            {grid.map((rows, i) =>
+                rows.map((cell, j) => (
+                <div
+                    key={`${i}-${j}`}
+                    style={{
+                    width: '20px',
+                    height: '20px',
+                    backgroundColor: cell ? 'white' : 'black',
+                    }}
+                ></div>
+                ))
+            )}
+            </div>
+            <div style={{
+                color: 'white',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
+                <a href="./home">
+                    <svg width="80" height="70" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                        <title>Layer 1</title>
+                        <rect stroke="#148cc8" id="svg_2" height="30" width="60" y="20" x="10" fill="#148cc8"/>
+                        <rect stroke="#148cc8" id="svg_3" height="10" width="40" y="10" x="20" fill="#148cc8"/>
+                        <rect stroke="#148cc8" id="svg_4" height="10" width="20" y="0" x="30" fill="#148cc8"/>
+                        <rect stroke="#148cc8" id="svg_5" height="10" width="80" y="30" x="0" fill="#148cc8"/>
+                        <rect stroke="#148cc8" id="svg_6" height="20" width="20" y="82.77037" x="221.77778" fill="#148cc8"/>
+                        <rect stroke="#148cc8" id="svg_7" height="20" width="20" y="50" x="10" fill="#148cc8"/>
+                        <rect stroke="#148cc8" id="svg_8" height="20" width="20" y="50" x="50" fill="#148cc8"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
         </div>
       );
     };

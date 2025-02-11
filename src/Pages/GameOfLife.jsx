@@ -72,6 +72,15 @@ const GameOfLife = () => {
       const [grid, setGrid] = useState(() => generateInitGrid(gridSize.cols, gridSize.rows));
       const speedRef = useRef(2000);
       const timeoutRef = useRef();
+
+      useEffect(() => {
+        console.log("Grid size:", gridSize);
+      }, [gridSize]);
+
+      useEffect(() => {
+        console.log("window.innerWidth:", window.innerWidth);
+        console.log("window.innerHeight:", window.innerHeight);
+      }, []);
     
       useEffect(() => {
         const handleResize = () => {

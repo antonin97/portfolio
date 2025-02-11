@@ -6,8 +6,10 @@ import Contacts from './Pages/Contacts';
 import GameOfLife from './Pages/GameOfLife';
 
 const AppRouter = () => {
+
+  const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '/';
   return (
-    <Router basename="/portfolio">
+    <Router basename='/'>
       <Routes>
         <Route path="/" element={<GameOfLife />} />
         <Route path="/home" element={<Home />} />

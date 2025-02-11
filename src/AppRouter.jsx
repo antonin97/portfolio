@@ -7,9 +7,8 @@ import GameOfLife from './Pages/GameOfLife';
 
 const AppRouter = () => {
 
-  const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '/';
   return (
-    <Router basename='/'>
+    <Router>
       <Routes>
         <Route path="/" element={<GameOfLife />} />
         <Route path="/home" element={<Home />} />

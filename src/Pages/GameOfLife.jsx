@@ -4,6 +4,9 @@ import { ANTONIN_MARTYKAN32x97, A_M25x15, ANTONIN_MARTYKAN20x48 } from '../Funct
 
 const GameOfLife = () => {
 
+  console.log("GameOfLife component is mounting...");
+
+
   const generateInitGrid = (columns, rows) => {
     // add different logic for different screen sizes
     const grid = [];

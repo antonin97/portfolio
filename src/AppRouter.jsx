@@ -1,4 +1,3 @@
-// AppRouter.js
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Projects from './Pages/Projects';
@@ -8,7 +7,7 @@ import GameOfLife from './Pages/GameOfLife';
 
 const AppRouter = () => {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <Routes>
         <Route path="/" element={<GameOfLife />} />
         <Route path="/home" element={<Home />} />

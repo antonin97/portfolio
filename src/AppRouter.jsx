@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Projects from './Pages/Projects';
 import Bio from './Pages/Bio';
 import Contacts from './Pages/Contacts';
 import GameOfLife from './Pages/GameOfLife';
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const AppRouter = () => {
 

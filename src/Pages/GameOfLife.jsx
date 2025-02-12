@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ANTONIN_MARTYKAN32x97, A_M25x15, ANTONIN_MARTYKAN20x48 } from '../Functions/textx';
+import { Link } from 'react-router-dom';
 
 
 const GameOfLife = () => {
@@ -154,7 +155,7 @@ const GameOfLife = () => {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <a href="./home">
+                <Link to="/home">
                     <svg width="80" height="70" xmlns="http://www.w3.org/2000/svg">
                         <g>
                         <title>Layer 1</title>
@@ -167,7 +168,7 @@ const GameOfLife = () => {
                         <rect stroke="#148cc8" id="svg_8" height="20" width="20" y="50" x="50" fill="#148cc8"/>
                         </g>
                     </svg>
-                </a>
+                </Link>
             </div>
         </div>
       );

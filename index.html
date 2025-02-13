@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
     <title>Portfolio</title>
+    <script>
+      (function() {
+        var path = window.location.search.slice(1);
+        if (path) {
+          window.history.replaceState(null, "", path);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
